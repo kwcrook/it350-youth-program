@@ -1,37 +1,37 @@
 CREATE TABLE Parent
 (
-  Name INT NOT NULL,
-  Parent_Email INT NOT NULL,
+  Name VARCHAR NOT NULL,
+  Parent_Email VARCHAR NOT NULL,
   PRIMARY KEY (Parent_Email)
 );
 
 CREATE TABLE Youth
 (
-  Name INT NOT NULL,
-  Youth_Email INT NOT NULL,
-  Birth_Date INT NOT NULL,
-  Parent_Email INT,
+  Name VARCHAR NOT NULL,
+  Youth_Email VARCHAR NOT NULL,
+  Birth_Date DATE NOT NULL,
+  Parent_Email VARCHAR,
   PRIMARY KEY (Youth_Email),
   FOREIGN KEY (Parent_Email) REFERENCES Parent(Parent_Email)
 );
 
 CREATE TABLE GoalCategory
 (
-  CategoryType INT NOT NULL,
-  Category_ID INT NOT NULL,
-  Youth_Email INT NOT NULL,
+  CategoryType VARCHAR NOT NULL,
+  Category_ID SERIAL NOT NULL,
+  Youth_Email VARCHAR NOT NULL,
   PRIMARY KEY (Category_ID),
   FOREIGN KEY (Youth_Email) REFERENCES Youth(Youth_Email)
 );
 
 CREATE TABLE Goal
 (
-  Goal_ID INT NOT NULL,
-  GoalContent INT NOT NULL,
-  Status INT NOT NULL,
-  CompletionDate INT,
-  Searchable INT,
-  Privacy INT NOT NULL,
+  Goal_ID SERIAL NOT NULL,
+  GoalContent VARCHAR NOT NULL,
+  Status BOOLEAN NOT NULL,
+  CompletionDate DATE,
+  Searchable BOOLEAN,
+  Privacy BOOLEAN NOT NULL,
   Category_ID INT NOT NULL,
   PRIMARY KEY (Goal_ID),
   FOREIGN KEY (Category_ID) REFERENCES GoalCategory(Category_ID)
@@ -39,11 +39,11 @@ CREATE TABLE Goal
 
 CREATE TABLE Comment
 (
-  Comment_ID INT NOT NULL,
-  Date INT NOT NULL,
-  Content INT NOT NULL,
-  Parent_Email INT NOT NULL,
-  Youth_Email INT NOT NULL,
+  Comment_ID SERIAL NOT NULL,
+  Date DATE NOT NULL,
+  Content VARCHAR NOT NULL,
+  Parent_Email VARCHAR NOT NULL,
+  Youth_Email VARCHAR NOT NULL,
   Goal_ID INT NOT NULL,
   PRIMARY KEY (Comment_ID),
   FOREIGN KEY (Parent_Email) REFERENCES Parent(Parent_Email),
