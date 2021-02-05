@@ -6,8 +6,16 @@ INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Spiritual','no-orp
 INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Physical','no-orphan@gmail.com');
 INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Intellectual','no-orphan@gmail.com');
 INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Social','no-orphan@gmail.com');
+INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Spiritual','luke@gmail.com');
+INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Physical','luke@gmail.com');
+INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Intellectual','luke@gmail.com');
+INSERT INTO goalcategory (categorytype, youth_email) VALUES ('Social','luke@gmail.com');
 INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Read Scriptures', 'f', null, 'f', 't', 1);
 INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Walk 1 mile', 'f', null, 't', 't', 2);
 INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Read a book', 't', '1981-04-07', 'f', 't', 3);
 INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Send letter to Grandma', 'f', null, 't', 't', 4);
+INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Discover the Force', 'f', null, 'f', 'f', 5);
+INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Lift an X-wing out of the swamps of Dagobah', 'f', null, 't', 'f', 6);
+INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Learn about twin sister', 't', '1981-04-07', 'f', 't', 7);
+INSERT INTO goal (goalcontent, status, completiondate, searchable, privacy, category_id) VALUES ('Go to Tosche station to pick up power converters', 'f', null, 't', 'f', 8);
 INSERT INTO comment (date, content, parent_email, youth_email, goal_id) VALUES ('2020-04-23', 'Good goal!!', 'yomama@gmail.com', 'no-orphan@gmail.com', 3);
