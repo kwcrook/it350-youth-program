@@ -56,7 +56,7 @@ ALTER TABLE youth
 ADD COLUMN password_hash text;
 
 CREATE OR REPLACE FUNCTION
-signup(name text, youth_email text, password text) RETURNS VOID
+signup(name text, youth_email text, password CHECK (len(password) >= 16)) RETURNS VOID
 AS $$
   INSERT INTO youth (name, youth_email, password_hash) VALUES
     (signup.name, signup.youth_email, signup.password);
